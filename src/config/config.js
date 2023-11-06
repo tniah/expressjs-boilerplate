@@ -19,5 +19,5 @@ export const appConfig = {
   mongoose: {
     url: envVars.MONGODB_URL,
     options: {},
-  }
+  },
 };
