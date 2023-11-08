@@ -18,6 +18,8 @@ export const getUser = catchAsync(async (req, res) => {
 });
 
 export const updateUser = catchAsync(async (req, res) => {
+  const user = await userService.updateUserById(req.params.userId, req.body);
+  res.status(httpStatus.OK).send(user);
 });
 
 export const deleteUser = catchAsync(async (req, res) => {
