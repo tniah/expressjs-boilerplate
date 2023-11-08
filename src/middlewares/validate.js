@@ -4,7 +4,7 @@ import httpStatus from 'http-status';
 import ApiError from '../utils/error';
 
 export const validate = (schema) => (req, res, next) => {
-  const validSchema = pick(schema, ['body']);
+  const validSchema = pick(schema, ['params', 'query', 'body']);
   const payload = pick(req, Object.keys(validSchema));
   const {value, error} = Joi.compile(validSchema)
     .prefs({errors: {label: 'key'}, abortEarly: false, allowUnknown: true, stripUnknown: true})
