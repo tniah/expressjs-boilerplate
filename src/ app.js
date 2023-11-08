@@ -11,7 +11,7 @@ app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 
 // v1 api routes
-app.use('/v1', routes);
+app.use('/api/v1', routes);
 
 // convert error to ApiError
 app.use(errorConverter)
