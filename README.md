@@ -1,1 +1,2 @@
-# expressjs-boilerplate
+## A boilerplate for ExpressJS
+
