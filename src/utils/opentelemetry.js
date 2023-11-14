@@ -18,7 +18,6 @@ const otelSDK = new NodeSDK({
   ],
   metricReader: new PeriodicExportingMetricReader({
     exporter: new OTLPMetricExporter(),
-    exportIntervalMillis: parseInt(process.env.OTEL_EXPORTER_OTLP_METRICS_INTERVAL_MILLIS, 5 *1000),
   }),
   resourceDetectors: [
     containerDetector,
