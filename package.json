@@ -5,18 +5,27 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node src/index.js",
+    "build": "cross-env NODE_ENV=production && rm -rf dist/ && babel src --out-dir dist --copy-files",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@opentelemetry/auto-instrumentations-node": "^0.40.0",
+    "@opentelemetry/exporter-metrics-otlp-grpc": "^0.45.1",
+    "@opentelemetry/exporter-trace-otlp-grpc": "^0.45.1",
+    "@opentelemetry/resource-detector-container": "^0.3.3",
+    "@opentelemetry/resources": "^1.18.1",
+    "@opentelemetry/sdk-metrics": "^1.18.1",
+    "@opentelemetry/sdk-node": "^0.45.1",
     "bcryptjs": "^2.4.3",
+    "cross-env": "^7.0.3",
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "http-status": "^1.7.3",
     "joi": "^17.11.0",
-    "mongoose": "^8.0.0"
+    "mongoose": "^7.6.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
